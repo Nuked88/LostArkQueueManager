@@ -94,7 +94,8 @@ def read_text(image,reader,search=""):
     return fulltext
 
 def telegram_bot_sendtext(bot_message):
-    requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":"None","bot_chatID":config["bot_chatID"]})
+    if config["bot_chatID"] != "" or config["bot_chatID"] != None or config["bot_chatID"] != "None" or config["bot_chatID"] != "00000000":
+        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":"None","bot_chatID":config["bot_chatID"]})
 
 
 def kill_myself():
