@@ -18,8 +18,8 @@ The check of the queue **will work** even if **Lost Ark** is minimized!
 * I've tried to generate an executable from this projext but was **INSANELY BIG** (like 2.5 GB) so for now we will continue to use the python script
 
 ## :rocket: Install
-* Install python 3.8 or better if you doesn't already have it on your pc ( Download it <a href="https://www.python.org/ftp/python/3.9.10/python-3.9.10-amd64.exe">HERE</a> and make sure to check **Add Python 3.x to PATH** - <a href="">example here</a> )
-* Clone this repository (or download it from <a href="">here</a> and extract everything in a folder you like)
+* Install python 3.8 or better if you doesn't already have it on your pc ( Download it <a href="https://www.python.org/ftp/python/3.9.10/python-3.9.10-amd64.exe">HERE</a> and make sure to check **Add Python 3.x to PATH** - <a href="https://raw.githubusercontent.com/Nuked88/LostArkQueueManager/main/doc/Install-Python-Windows-Step-1.png">example here</a> )
+* Clone this repository (or download it from <a href="https://github.com/Nuked88/LostArkQueueManager/archive/refs/heads/main.zip">here</a> and extract everything in a folder you like)
 * Run the following command at the root of your project
   ```sh
   pip -r requirements.txt
