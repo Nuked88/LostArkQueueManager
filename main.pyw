@@ -214,7 +214,7 @@ def run():
                         check_count = check_count + 1
                             
                         
-                        time.sleep(30)
+                        time.sleep(config["check_queue_time"])
                     else:
                         start_image_button = find_image(cache_screen, f"{main_path}\\targets\\launch.png")
         
