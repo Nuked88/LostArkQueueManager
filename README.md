@@ -29,12 +29,20 @@ The check of the queue **will work** even if **Lost Ark** is minimized!
   or click on **install.bat**
 
 ## :wrench: First Configuration
+* Go in the **targets** folder, you will see three images, these are screen that i have taken from my game (witch is runnning in 2k), for make this program been able to work propriety you will need to replace it with your images if you see that is not working well:
 
-* Rename config.example.yaml in config.yaml and open it
-* **[Telegram notification]** Retrive your chat id following <a href="https://www.alphr.com/find-chat-id-telegram/">this instruction</a>  and put it in the `bot_chatID` field (replace **00000000** maintaining the **"**  **"**), otherwise leave it like so or set it to **None**
-* **[Telegram notification]** Put in `send_message_under` field when the bot should start to send you notification on telegram `Default: 400`
-* **[Telegram notification]** Put in `check_queue_time` field how often (seconds) the bot will notify you (and the program will check the Lost Ark queue) `Default: 30`
-* Put in `server_name` field the name of your server or leave it empty if you just doesn't want the **Auto-Join-to-server** feature
+  * `button.png` (**mandatory**) is the button that appear on the popup when you are in queue 
+  * `launch.png` is the button that appear when the queue is over and you can enter in your server (**mandatory** if you want to use the **Auto-Join-to-server**  feature)
+  * `exit_eac.png` (mine is in italian) is the button that appean when the game fail to start (it's happen to me **EVERYTIME** i launch the game the first time after a  reboot of my pc, if you doesn't have this issue you can ignore that...)
+
+**TIPS: To take a screenshot on a specific part of the screen on Windows 10 or 11 press the <kbd> Shift </kbd> + <kbd> Win </kbd> + <kbd> S</kbd>   buttons and then save the image**
+  <br>
+* Rename `config.example.yaml` in `config.yaml`, open it and configure it as follow:
+  * **[Telegram notification]** Retrive your chat id following <a href="https://www.alphr.com/find-chat-id-telegram/">this instruction</a>  and put it in the   `bot_chatID` field (replace **00000000** maintaining the **"**  **"**), otherwise leave it like so or set it to **None**
+  * **[Telegram notification]** Put in `send_message_under` field when the bot should start to send you notification on telegram `Default: 400`
+  * **[Telegram notification]** Put in `check_queue_time` field how often (seconds) the bot will notify you (and the program will check the Lost Ark queue) `Default:   30`
+  * Put in `server_name` field the name of your server or leave it empty if you just doesn't want the **Auto-Join-to-server** feature
+* Enjoy!
 ## :clipboard: Usage
 
 If you want to just launch this program double click on

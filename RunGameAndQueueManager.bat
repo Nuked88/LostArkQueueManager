@@ -1,1 +1,1 @@
-python main.pyw gc
+start main.pyw gc

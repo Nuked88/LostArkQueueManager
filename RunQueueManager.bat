@@ -1,1 +1,1 @@
-python main.pyw c
+start main.pyw c
