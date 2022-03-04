@@ -93,9 +93,9 @@ def read_text(image,reader,search=""):
     
     return fulltext
 
-def telegram_bot_sendtext(bot_message):
+def telegram_bot_sendtext(bot_message,check_count):
     if config["bot_chatID"] != "" or config["bot_chatID"] != None or config["bot_chatID"] != "None" or config["bot_chatID"] != "00000000":
-        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":"None","bot_chatID":config["bot_chatID"]})
+        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":"None","bot_chatID":config["bot_chatID"],"count":check_count})
 
 
 def kill_myself():
@@ -149,7 +149,8 @@ def run():
 
     print("Starting...")
     info = "Starting..."
-
+    check_count=0
+    
     id=None
     while id is None and started:
         win32gui.EnumWindows( winEnumHandler, None )
@@ -200,17 +201,17 @@ def run():
                         
 
                         queue_spot = int(''.join(filter(str.isdigit, read_text(crop_img,reader))))
-
+                        
 
                         if queue_spot<config["send_message_under"]:
                             print(f"Queue is ending!({str(queue_spot)})", end ="\r")
                             info=f"Queue is ending!({str(queue_spot)})"
-                            telegram_bot_sendtext(f"{str(queue_spot)} people")
+                            telegram_bot_sendtext(f"{str(queue_spot)} people",check_count)
                         else:
                             print(f"Queue is full({str(queue_spot)})", end ="\r")
                             info=f"Queue is full({str(queue_spot)})"
 
-
+                        check_count = check_count + 1
                             
                         
                         time.sleep(30)
@@ -230,7 +231,7 @@ def run():
 
                             click(x,y)
 
-                            telegram_bot_sendtext("It's time to play!")
+                            telegram_bot_sendtext("It's time to play!",check_count)
                             info="Session started! Closing window in 10 seconds"
                             time.sleep(10)
                             #kill 

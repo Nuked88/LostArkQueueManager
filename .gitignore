@@ -8,6 +8,7 @@ telegram.py
 screen*
 push.bat
 config.yaml
+test.py
 
 # C extensions
 *.so

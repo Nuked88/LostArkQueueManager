@@ -24,7 +24,7 @@ The check of the queue **will work** even if **Lost Ark** is minimized!
 * Clone this repository (or download it from <a href="https://github.com/Nuked88/LostArkQueueManager/archive/refs/heads/main.zip">here</a> and extract everything in a folder you like)
 * Run the following command at the root of your project
   ```sh
-  pip -r requirements.txt
+  pip install -r requirements.txt
   ```
   or click on **install.bat**
 
