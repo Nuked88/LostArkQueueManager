@@ -1,3 +1,5 @@
+<p align="center"><img alt="Logo" src="https://raw.githubusercontent.com/Nuked88/LostArkQueueManager/main/doc/Logo.jpg"></p>
+
 <h1 align="center">Welcome to Lost Ark Queue Manager 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.8-blue.svg?cacheSeconds=2592000" />
