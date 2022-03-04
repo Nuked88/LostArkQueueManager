@@ -78,9 +78,9 @@ Feel free to check [issues page](https://github.com/Nuked88/LostArkQueueManager/
 
 
 ## Show your support
-<3 Give a ⭐️ if this project helped you! <3
+:heart: Give a ⭐️ if this project helped you! :heart:
 
-<3  [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C0AJECJ)  <3
+:heart:  [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C0AJECJ)  :heart:
 
 ## 📝 License
 
