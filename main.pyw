@@ -22,6 +22,7 @@ main_path = Path(__file__).parent
 with open(main_path/'config.yaml') as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
     server_name = config["server_name"]
+    send_message_under = config["send_message_under"]
 
 
 cache_screen = f"{main_path}\\targets\\screen.png"
@@ -94,9 +95,9 @@ def read_text(image,reader,search=""):
     
     return fulltext
 
-def telegram_bot_sendtext(bot_message,check_count):
+def telegram_bot_sendtext(bot_message,check_count,send_message_under):
     if config["bot_chatID"] != "" or config["bot_chatID"] != None or config["bot_chatID"] != "None" or config["bot_chatID"] != "00000000":
-        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":f"{server_name}","bot_chatID":config["bot_chatID"],"count":check_count})
+        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":f"{server_name}","bot_chatID":config["bot_chatID"],"count":check_count,"send_message_under":send_message_under})
 
 
 def kill_myself():
@@ -204,13 +205,14 @@ def run():
                         queue_spot = int(''.join(filter(str.isdigit, read_text(crop_img,reader))))
                         
 
-                        if queue_spot<config["send_message_under"]:
+                        if queue_spot<send_message_under:
                             print(f"Queue is ending!({str(queue_spot)})", end ="\r")
                             info=f"Queue is ending!({str(queue_spot)})"
-                            telegram_bot_sendtext(f"{str(queue_spot)} people",check_count)
+                            telegram_bot_sendtext(f"{str(queue_spot)} people",check_count,send_message_under)
                         else:
                             print(f"Queue is full({str(queue_spot)})", end ="\r")
                             info=f"Queue is full({str(queue_spot)})"
+                            telegram_bot_sendtext(f"{str(queue_spot)} people",check_count,send_message_under)
 
                         check_count = check_count + 1
                             
@@ -241,7 +243,7 @@ def run():
 
                         else:
                             info="Process found with id: "+str(id)+",Please select a server!"
-                            if config["server_name"].strip()!="":
+                            if config["server_name"].strip()!="" and config["server_name"].strip()!="None":
                                 res = select_server(config["server_name"])
                                 if res is None:
                                     info="Server not found, please select a server manually!"
