@@ -21,6 +21,7 @@ main_path = Path(__file__).parent
 #read configuration
 with open(main_path/'config.yaml') as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
+    server_name = config["server_name"]
 
 
 cache_screen = f"{main_path}\\targets\\screen.png"
@@ -95,7 +96,7 @@ def read_text(image,reader,search=""):
 
 def telegram_bot_sendtext(bot_message,check_count):
     if config["bot_chatID"] != "" or config["bot_chatID"] != None or config["bot_chatID"] != "None" or config["bot_chatID"] != "00000000":
-        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":"None","bot_chatID":config["bot_chatID"],"count":check_count})
+        requests.post('https://laq.animecast.net/send_message', json={"queue":f"{bot_message}","serverName":f"{server_name}","bot_chatID":config["bot_chatID"],"count":check_count})
 
 
 def kill_myself():
