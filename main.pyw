@@ -134,7 +134,7 @@ def select_server(server_name):
     y = (y + h)/2
     #print(x,y)
     dclick(x,y)
-
+    dclick(x,y)
     sleep(2)
    
 
@@ -237,6 +237,7 @@ def run():
                             telegram_bot_sendtext("It's time to play!",check_count)
                             info="Session started! Closing window in 10 seconds"
                             time.sleep(10)
+                            kill_myself()
                             #kill 
                             closeFromThread = True
                             started = False
